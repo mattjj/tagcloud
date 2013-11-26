@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Tag Cloud Example</title>
+<style>* { margin: 0; border: 0; padding: 0; font: 14px arial,sans-serif; }</style>
+<link rel="stylesheet" type="text/css" href="tagcloud.css" />
+
+<body>
+    <div id="tagcloud"></div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="../tagcloud.js"></script>
+    <script type="text/javascript">
+        var tags = tagCloud()
+            .tagLabels(function(d) { return d.tag; })
+            .tagSize(function(d) { return d.size; })
+            .groupID(function(d) { return d.tagGroup; });
+
+        var tagclouddiv = d3.select("#tagcloud"),
+            svg = tagclouddiv.append("svg")
+                .attr("width",parseInt(tagclouddiv.style("width"),10))
+                .attr("height",parseInt(tagclouddiv.style("height"),10));
+
+        d3.json("tags.json", function(error,data) {
+            if (error) {
+                console.log("there was an error loading the data: " + error);
+            } else {
+                svg.datum(data).call(tags);
+                foo = data; // TODO remove
+            }
+        });
+    </script>

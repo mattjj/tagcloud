@@ -1,0 +1,41 @@
+div#tagcloud {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.tagtext { position: absolute; cursor: pointer; opacity: 0; }
+
+circle.g-node {
+    stroke-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+circle.g-node {
+    stroke-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+circle.g-node.group0 {
+    fill: rgba(32,143,205,0.25);
+    stroke: rgb(32,143,205);
+}
+
+circle.g-node.group1 {
+    fill: rgba(246,147,34,0.25);
+    stroke: rgb(246,147,34);
+}
+
+svg { display: block; margin-left: auto; margin-right: auto; }
+
