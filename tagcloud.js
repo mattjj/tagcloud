@@ -97,7 +97,7 @@ function tagCloud() {
 
         /* force and collisions */
 
-        // The next function based on Dr. Mike Bostock's collision function,
+        // The next function based on Dr. Michael Bostock's collision function,
         // only slightly modified. I think it's a pretty standard thing to do.
         function collide(alpha) {
             var q = d3.geom.quadtree(data);
