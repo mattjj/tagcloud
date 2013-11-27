@@ -13,7 +13,7 @@
         var tags = tagCloud()
             .tagLabels(function(d) { return d.tag; })
             .tagSize(function(d) { return d.size; })
-            .groupID(function(d) { return d.tagGroup; });
+            .groupIdx(function(d) { return d.tagGroup; });
 
         var tagclouddiv = d3.select("#tagcloud"),
             svg = tagclouddiv.append("svg")

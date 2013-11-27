@@ -9,7 +9,7 @@ function tagCloud() {
     var fontScale = d3.scale.linear().domain([0,1]).range([10,20]),
         padding = 15,
         maxCollisionSearchRadius = 100,
-        groupID,
+        groupIdx,
         tagClickCallback;
 
     /* internal data */
@@ -29,7 +29,7 @@ function tagCloud() {
         var width  = svg.attr("width"),
             height = svg.attr("height"),
             data = svg.datum(),
-            numGroups = groupID ? numUnique(data.map(groupID)) : 1;
+            numGroups = groupIdx ? numUnique(data.map(groupIdx)) : 1;
 
         /* text labels */
 
@@ -72,7 +72,7 @@ function tagCloud() {
         nodes.enter()
             .append("circle")
             .attr("class", function(d) {
-                return groupID ? ("group" + groupID(d)) : "";
+                return groupIdx ? ("group" + groupIdx(d)) : "";
             })
             .classed("g-node",true)
             .attr("r", function(d) { return Math.max(d.dx,d.dy)/2 + padding/2 + "px"; })
@@ -128,7 +128,7 @@ function tagCloud() {
 
         function gravity(alpha) {
             return function(d) {
-                var idx = groupID ? groupID(d) : 1;
+                var idx = groupIdx ? groupIdx(d) : 1;
                 d.x += (width/(numGroups+1)*(idx+1) - d.x)*alpha;
                 d.y += (height/2 - d.y)*alpha*1.618;
             };
@@ -182,9 +182,9 @@ function tagCloud() {
         return my;
     };
 
-    my.groupID = function(_) {
-        if (!arguments.length) return groupID;
-        groupID = _;
+    my.groupIdx = function(_) {
+        if (!arguments.length) return groupIdx;
+        groupIdx = _;
         return my;
     };
 
