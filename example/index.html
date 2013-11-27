@@ -21,10 +21,6 @@
                 .attr("height",parseInt(tagclouddiv.style("height"),10));
 
         d3.json("tags.json", function(error,data) {
-            if (error) {
-                console.log("there was an error loading the data: " + error);
-            } else {
-                svg.datum(data).call(tags);
-            }
+            if (!error) svg.datum(data).call(tags);
         });
     </script>
