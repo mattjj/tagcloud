@@ -17,8 +17,8 @@
 
         var tagclouddiv = d3.select("#tagcloud"),
             svg = tagclouddiv.append("svg")
-                .attr("width",parseInt(tagclouddiv.style("width"),10))
-                .attr("height",parseInt(tagclouddiv.style("height"),10));
+                .attr("width",parseInt(tagclouddiv.style("width")))
+                .attr("height",parseInt(tagclouddiv.style("height")));
 
         d3.json("tags.json", function(error,data) {
             if (!error) svg.datum(data).call(tags);
