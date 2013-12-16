@@ -13,6 +13,6 @@ python -m SimpleHTTPServer
 
 # TODO #
 
-Mike Bostock posted [this clustered force
-layout](http://bl.ocks.org/mbostock/7881887) on Dec 9 2013, and that looks like
-a much better way of dealing with groups.
+Mike Bostock posted [these new](http://bl.ocks.org/mbostock/7881887) [clustered
+force layouts](http://bl.ocks.org/mbostock/7882658) and they're a much better
+way to do groups...
